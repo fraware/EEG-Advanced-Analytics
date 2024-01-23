@@ -14,6 +14,29 @@ This project is structured to handle EEG data through various processing and ana
 
 Developed using **Python 3.12**, the project is designed to be clear, modular, and extendable.
 
+## Data Source
+
+The EEG data used in this project is sourced from the [EEG Database at UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/121/eeg+database). This database originates from a comprehensive study aimed at examining EEG correlates of genetic predisposition to alcoholism.
+
+### Dataset Characteristics
+- **Type:** Multivariate, Time-Series
+- **Subject Area:** Health and Medicine
+- **Tasks:** Classification
+- **Feature Types:** Categorical, Integer, Real
+- **Number of Instances:** 122
+
+### Dataset Information
+The dataset includes measurements from 64 electrodes placed on subjects' scalps, sampled at 256 Hz (3.9-msec epoch) for 1 second. The study involved two groups of subjects: alcoholic and control. Each subject was exposed to different stimuli, either a single stimulus (S1) or two stimuli (S1 and S2), where S1 and S2 could be identical or different.
+
+### Additional Notes
+- **Electrode Placement:** Standard sites (Standard Electrode Position Nomenclature, American Electroencephalographic Association 1990).
+- **Data Collection:** Detailed in Zhang et al. (1995).
+- **Data Issues:** Some trials have "err" notices, and there are 17 trials with empty files in one of the datasets.
+
+Example plots of control and alcoholic subjects' data under single stimulus conditions can be found on the [UCI Repository site](http://kdd.ics.uci.edu/databases/eeg/eeg.html).
+
+This dataset provides a rich source for examining EEG-based differences between control and alcoholic subjects, forming the basis of our analysis in this project.
+
 ## Setup and Installation
 
 To set up the project:
