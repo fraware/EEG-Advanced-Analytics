@@ -1,7 +1,23 @@
-numpy
-pandas
-matplotlib
-seaborn
-plotly
-scipy
-tqdm
+# EEG Advanced Analytics — runtime dependencies only
+#
+# Install the package (recommended):
+#   pip install -e .
+# With developer tools (lint, types, tests, pre-commit):
+#   pip install -e ".[dev]"
+# Optional Plotly static export:
+#   pip install -e ".[kaleido]"
+# Optional MNE-Python (experimental hook):
+#   pip install -e ".[mne]"
+#
+# Version bounds mirror [project.dependencies] in pyproject.toml.
+
+numpy>=1.26,<3
+pandas>=2.1,<3
+matplotlib>=3.8,<4
+seaborn>=0.13,<1
+plotly>=5.18,<6
+scipy>=1.11,<2
+tqdm>=4.66,<5
+typer>=0.9,<1
+python-dotenv>=1.0,<2
+statsmodels>=0.14,<1

@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eeg-advanced-analytics"
+version = "0.2.0"
+description = "EEG analysis for cognitive state identification (UCI EEG database)"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26,<3",
+    "pandas>=2.1,<3",
+    "matplotlib>=3.8,<4",
+    "seaborn>=0.13,<1",
+    "plotly>=5.18,<6",
+    "scipy>=1.11,<2",
+    "tqdm>=4.66,<5",
+    "typer>=0.9,<1",
+    "python-dotenv>=1.0,<2",
+    "statsmodels>=0.14,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8,<9",
+    "pytest-cov>=4,<6",
+    "ruff>=0.6,<1",
+    "mypy>=1.11,<2",
+    "pre-commit>=3.7,<4",
+    "pandas-stubs>=2.2,<3",
+    "types-seaborn>=0.13,<1",
+]
+kaleido = ["kaleido>=0.2.1,<1"]
+mne = ["mne>=1.6,<2"]
+
+[project.scripts]
+eeg-analyze = "eeg_advanced_analytics.cli:cli_entry"
+
+[project.urls]
+Homepage = "https://github.com/fraware/EEG-Advanced-Analytics"
+Repository = "https://github.com/fraware/EEG-Advanced-Analytics"
+Issues = "https://github.com/fraware/EEG-Advanced-Analytics/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+"src/eeg_advanced_analytics/cli.py" = ["B008"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.mypy]
+python_version = "3.11"
+packages = ["eeg_advanced_analytics"]
+mypy_path = "src"
+warn_unused_ignores = true
+warn_return_any = true
+disallow_untyped_defs = false
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
